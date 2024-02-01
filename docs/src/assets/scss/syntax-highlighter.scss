@@ -113,6 +113,9 @@ pre[class*="language-"] {
      * To make the border shift less noticeable, draw it with a smaller width.
      */
     background-size: 4.4px auto;
+
+    /* for .eslint-message */
+    position: relative;
 }
 
 .token.eslint-marked-line-feed {
@@ -122,6 +125,19 @@ pre[class*="language-"] {
 
     /* Delete the wavy line. */
     background: none;
+}
+
+.token.eslint-message {
+    position: absolute;
+    display: none;
+    background-color: var(--color-rose-25);
+    color: var(--color-rose-700);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.token.eslint-marked:hover > .token.eslint-message {
+    display: block;
 }
 
 .line-numbers-wrapper {
